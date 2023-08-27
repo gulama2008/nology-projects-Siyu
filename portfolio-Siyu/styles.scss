@@ -1,0 +1,187 @@
+@use "./partials/mixins.scss";
+@use "./partials/colors.scss";
+
+*{
+    // margin: 0px;
+    // padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    color: colors.$main-color;
+}
+
+.navbar{
+
+    @include mixins.md-lg-screen{
+        @include mixins.flex(row,space-between);
+        height: 100px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @include mixins.phone{
+        @include mixins.flex(column,center);
+        height: 100px;
+    }
+    
+    &__menu{
+        &__list{
+            @include mixins.flex(row,space-between);
+            gap: 30px;
+            list-style: none;
+            &__item{
+                :hover{
+                    color: colors.$main-color;
+                }
+                &__link{
+                    text-decoration: none;
+                    color: colors.$secondary-color;
+                }
+            }
+        }
+    }
+}
+
+.section--about-me{
+    @include mixins.flex(row,center,flex-start);
+    height: 500px;
+    background-color: colors.$background-color;
+    &__text{
+        width: 50%;
+        height: 70%;
+        padding: 100px;
+        &--title{
+            @include mixins.typography(14px,colors.$secondary-color,300);
+        }
+        &--name{
+            line-height: 1.8em;
+            @include mixins.typography(48px,colors.$header-color,600);
+        }
+        &--content{
+            @include mixins.typography(14px,colors.$main-color,400);
+            line-height: 1.75em;
+        }
+        // &__btn{
+        //     margin-top: 30px;
+        //     padding: 0.8em 2.1em;
+        //     border: 1px solid colors.$secondary-color;
+        //     background-color: colors.$secondary-color;
+        //     color: white;
+        //     border-radius: 30px;
+        //     box-shadow: 0 10px 10px -8px rgba(0,0,0,.22);
+        //     cursor: pointer;
+        // }
+    }
+
+    &__img{
+        width: 50%;
+        &>img{
+            width: 70%;
+        }
+    }
+}
+
+.section{
+    @include mixins.md-lg-screen{
+        margin-top: 50px;
+        padding: 0px 15%;
+        &__title{
+            @include mixins.title;
+        }
+        &__content{
+            
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+    }
+
+    @include mixins.phone{
+        @include mixins.flex(column,flex-start,center);
+        margin-top: 50px;
+        padding: 0px 5%;
+        &__content{
+            @include mixins.flex(column,flex-start,center);
+        }
+    }
+    
+}
+
+.section--skills{
+    &__content{
+        @include mixins.flex(row,flex-start);
+        &__item{
+            @include mixins.flex(column,space-between);
+            gap: 10px;
+            background-color: colors.$background-color;
+            box-shadow: 0 10px 10px -8px rgba(0,0,0,.22);
+            padding: 18px;
+            &--name{
+                margin: 5px 0px;
+            }
+        }
+    }  
+}
+
+img{
+    width: 100%;
+}
+
+.btn{
+    @include mixins.button;
+}
+
+.section--projects{
+    @include mixins.phone{
+
+    }
+    @include mixins.md-lg-screen{
+        &__content{
+            @include mixins.flex(row,center);
+        &__item{
+            width: 30%;
+        }
+    }
+    }
+}
+
+.section--contact{
+    @include mixins.phone{
+
+    }
+    @include mixins.md-lg-screen{
+        &__content{
+            padding: 10%;
+            @include mixins.flex(row,center);
+            flex-wrap: nowrap;
+            background-color: colors.$background-color;
+            &__item{
+                &--list{
+                    width: 45%;
+                    list-style: none;
+                    li{
+                        margin-bottom: 30px;
+                        a{
+                            text-decoration: none;
+                        }
+                    }
+                }
+                &--form{
+                    width: 48%;
+                    @include mixins.flex(column,flex-start,flex-start);
+                    gap: 20px;
+                    input{
+                        height: 40px;
+                    }
+                    input,textarea{
+                        width: 95%;
+                        border: solid 1px rgba(114,132,167,0.149);
+                        border-radius: 0.5rem;
+                        background-color:colors.$background-color;
+                        padding: 0.5rem 1.5rem;
+                    }
+                    ::placeholder{
+                            @include mixins.placeholder;
+                        }
+                }
+            }
+        }
+    }
+}

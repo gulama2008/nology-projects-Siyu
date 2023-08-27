@@ -1,0 +1,65 @@
+@use "./breakpoints.scss";
+@use "./colors.scss";
+
+@mixin flex($flex-direction,$justify-content,$align-items:center){
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin typography($font-size:14px,$color:#737373,$font-weight:400){
+    font-size: $font-size;
+    color:$color;
+    font-weight: $font-weight;
+}
+
+@mixin phone{
+    @media only screen and (max-width:breakpoints.$sm){
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media only screen and (min-width:(breakpoints.$sm+1px)) and (max-width:breakoutpoints.$md){
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media only screen and (min-width:(breakpoints.$md+1px)){
+        @content;
+    }
+}
+
+@mixin md-lg-screen{
+    @media only screen and (min-width:(breakpoints.$sm+1px)){
+        @content
+    }
+};
+
+@mixin title{
+    font-size: 48px;
+    font-weight: 500;
+    padding-left: 10px;
+    border-left: 30px solid colors.$secondary-color;
+    margin: 50px 0px;
+    color: colors.$header-color;
+}
+
+@mixin placeholder{
+    font-size: 1.5em;
+    font-weight:200;
+    color: colors.$placeholder-color;
+}
+
+@mixin button{
+    margin-top: 30px;
+    padding: 0.8em 2.1em;
+    border: 1px solid colors.$secondary-color;
+    background-color: colors.$secondary-color;
+    color: white;
+    border-radius: 30px;
+    box-shadow: 0 10px 10px -8px rgba(0,0,0,.22);
+    cursor: pointer;
+}
