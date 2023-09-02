@@ -20,16 +20,41 @@
   }
 }
 
-
+header{
+    position: fixed;
+    top: 0px;
+    z-index: 9999;
+    background-color: white;
+    width: 100%;
+    height: 80px;
+}
 .navbar{
-    // position: fixed;
-    // top: 0px;
-    @include mixins.md-lg-screen{
-        @include mixins.flex(row,space-between);
-        height: 80px;
-        padding-left: 30px;
-        padding-right: 30px;
+    @include mixins.flex(row,space-between);
+    height: 80px;
+    &__logo{
+        height: 80%;
+        padding-left: 20px;
+        @include mixins.flex(row,space-between,center);
+        &--img{
+            height: 60%;
+        }
+        &--fname{
+            margin-left: 5px;
+            font-weight: 600;
+            color: colors.$header-color;
+        }
+        &--lname{
+            margin-left: 5px;
+            font-weight: 400;
+        }
+    }
+    
+    @include mixins.lg-screen{
         &__menu{
+            padding-right: 100px;
+            &--sm{
+                display: none;
+            }
             &__list{
                 @include mixins.flex(row,space-between);
                 gap: 30px;
@@ -41,18 +66,27 @@
                     &__link{
                         text-decoration: none;
                         color: colors.$secondary-color;
+                        white-space: nowrap;
                     }
                 }
             }
         }
     }
 
-    @include mixins.phone{
-        @include mixins.flex(column,center);
-        height: 60px;
+    @include mixins.sm-md-screen{
         &__menu{
+            padding-right: 50px;
+            &--lg{
+                display: none;
+            }
+            &__hb{
+                border: 1px solid colors.$secondary-color;
+                border-radius: 5px;
+                padding: 5px;
+            }
             &__list{
                 @include mixins.flex(row,space-between);
+                margin: 0px;
                 padding-left: 0px;
                 gap: 30px;
                 list-style: none;
@@ -62,6 +96,7 @@
                     }
                     &__link{
                         text-decoration: none;
+                        white-space: nowrap;
                         color: colors.$secondary-color;
                     }
                 }
@@ -73,26 +108,39 @@
 }
 
 .section--about-me{
-    @include mixins.phone{
-        @include mixins.flex(column-reverse,center,flex-start);
-        // height: 100vh;
-        padding: 0px 5%;
+    background-color: colors.$background-color;
+    margin-top: 80px;
+    &__text{
+            &--title{
+                margin-bottom: 0px;
+                @include mixins.typography(14px,colors.$secondary-color,300);
+            }
+            &--name{
+                margin-top: 0px;
+                margin-bottom: 0px;
+                @include mixins.typography(48px,colors.$header-color,600);
+            }
     }
-    @include mixins.md-lg-screen{
+    &__img{
+        width: 50%;
+        height: 100%;
+        padding-top:5%;
+        &>img{
+            width: 50%;
+            border: 1px solid colors.$background-color;
+            border-radius: 50%;
+        }
+    }
+
+    @include mixins.lg-screen{
         @include mixins.flex(row,center,flex-start);
-        height: 100vh;
+        height: 100%;
+        width: 100%;
         background-color: colors.$background-color;
         &__text{
             width: 50%;
             height: 70%;
-            padding: 100px;
-            &--title{
-                @include mixins.typography(14px,colors.$secondary-color,300);
-            }
-            &--name{
-                line-height: 1.8em;
-                @include mixins.typography(48px,colors.$header-color,600);
-            }
+            padding: 5%;
             &--content{
                 @include mixins.typography(14px,colors.$main-color,400);
                 line-height: 1.75em;
@@ -100,21 +148,27 @@
         }
     }
 
-    &__img{
-        width: 50%;
-        &>img{
-            width: 70%;
+    @include mixins.sm-md-screen{
+        @include mixins.flex(column-reverse,center,flex-start);
+        
+        padding:5%;
+        &__text{
+            &--content{
+                @include mixins.typography(12px,colors.$main-color,400);
+            }
         }
+        
     }
+
+    
 }
 
 .section{
-    @include mixins.md-lg-screen{
-        // height: 100vh;
+    @include mixins.lg-screen{
         margin-top: 50px;
         padding: 0px 15%;
         &__title{
-            @include mixins.title;
+            @include mixins.title-lg;
         }
         &__content{
             flex-wrap: wrap;
@@ -122,10 +176,13 @@
         }
     }
 
-    @include mixins.phone{
+    @include mixins.sm-md-screen{
         @include mixins.flex(column,flex-start,center);
-        margin-top: 50px;
+        margin-top: 20px;
         padding: 0px 5%;
+        &__title{
+            @include mixins.title-sm;
+        }
         &__content{
             @include mixins.flex(column,flex-start,center);
         }
@@ -134,21 +191,7 @@
 }
 
 .section--skills{
-    @include mixins.phone{
-        &__content{
-            @include mixins.flex(row,center);
-            flex-wrap: wrap;
-            gap: 20px;
-            &__item{
-                @include mixins.skill-card;
-                width: 30%;
-                &--name{
-                    margin: 5px 0px;
-                }
-            }
-        }  
-    }
-    @include mixins.md-lg-screen{
+    @include mixins.lg-screen{
         &__content{
             @include mixins.flex(row,flex-start);
             &__item{
@@ -163,29 +206,37 @@
             }
         }  
     }
+
+    @include mixins.sm-md-screen{
+        &__content{
+            @include mixins.flex(row,center);
+            flex-wrap: wrap;
+            gap: 20px;
+            &__item{
+                @include mixins.skill-card;
+                width: 30%;
+                &--name{
+                    margin: 5px 0px;
+                }
+            }
+        }  
+    }
 }
 
 
 .btn{
     @include mixins.button;
+    a{
+        text-decoration: none;
+        color: white;
+        padding: 0px;
+        box-shadow: none;
+    }
 }
 
 .section--projects{
-    @include mixins.phone{
-        &__content{
-            @include mixins.flex(column,center);
-            &__item{
-                width: 95%;
-                &__link{
-                    &--img{
-                        width: 100%;
-                    }
-                }
-            }
-        }
-
-    }
-    @include mixins.md-lg-screen{
+    
+    @include mixins.lg-screen{
         &__content{
             @include mixins.flex(row,center);
             &__item{
@@ -198,36 +249,24 @@
             }
         }
     }
-}
 
-.section--contact{
-    @include mixins.phone{
-        padding: 0px;
+    @include mixins.sm-md-screen{
         &__content{
-            background-color: colors.$background-color;
-            width: 100%;
+            @include mixins.flex(column,center);
             &__item{
-                &--list{
-                    padding: 0px;
-                    @include mixins.list;
-                }
-                &--form{
-                    @include mixins.flex(column,flex-start,flex-start);
-                    gap: 20px;
-                    input{
-                        height: 30px;
+                width: 95%;
+                &__link{
+                    &--img{
+                        width: 100%;
                     }
-                    input,textarea{
-                        @include mixins.input(85%);
-                    }
-                    ::placeholder{
-                            @include mixins.placeholder;
-                        }
                 }
             }
         }
     }
-    @include mixins.md-lg-screen{
+}
+
+.section--contact{
+    @include mixins.lg-screen{
         &__content{
             padding: 10%;
             @include mixins.flex(row,center);
@@ -251,6 +290,35 @@
                     ::placeholder{
                             @include mixins.placeholder;
                         }
+                }
+            }
+        }
+    }
+
+    @include mixins.sm-md-screen{
+        padding: 0px;
+        padding-bottom: 5%;
+        background-color: colors.$background-color;
+        &__content{
+            
+            width: 100%;
+            &__item{
+                &--list{
+                    padding: 0px;
+                    @include mixins.list;
+                }
+                &--form{
+                    @include mixins.flex(column,flex-start,flex-start);
+                    gap: 20px;
+                    input{
+                        height: 30px;
+                    }
+                    input,textarea{
+                        @include mixins.input(85%);
+                    }
+                    ::placeholder{
+                        @include mixins.placeholder;
+                    }
                 }
             }
         }

@@ -14,8 +14,8 @@
     font-weight: $font-weight;
 }
 
-@mixin phone{
-    @media only screen and (max-width:breakpoints.$sm){
+@mixin sm-md-screen{
+    @media only screen and (max-width:breakpoints.$md){
         @content;
     }
 }
@@ -32,17 +32,27 @@
     }
 }
 
-@mixin md-lg-screen{
-    @media only screen and (min-width:(breakpoints.$sm+1px)){
-        @content
+@mixin lg-screen{
+    @media only screen and (min-width:(breakpoints.$md+1px)){
+        @content;
     }
 };
 
-@mixin title{
+@mixin title-lg{
     font-size: 48px;
     font-weight: 500;
     padding-left: 10px;
     border-left: 30px solid colors.$secondary-color;
+    
+    color: colors.$header-color;
+}
+
+@mixin title-sm{
+    font-size: 30px;
+    font-weight: 500;
+    padding: 0px 20px;
+    border-bottom: 2px solid ;
+    border-image: linear-gradient(90deg, colors.$secondary-color 0%,white 100%) 2 2 2 2;
     margin: 50px 0px;
     color: colors.$header-color;
 }

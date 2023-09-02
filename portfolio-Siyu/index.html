@@ -12,151 +12,165 @@
     
 </head>
 <body>
-    <header class="navbar">
-        <div class="navbar__logo"><img src="" alt="">Siyu Liu</div>
-            <!-- <nav class="navbar__menu__container navbar__menu__container-sm">
-                <div class="navbar__menu__container__hb"><a class="navbar__menu__container__hb-icon" href=""><img src="./hamburger-icon.png" alt="" class="hb__container--icon"></a></div>
-                <ul class="navbar__menu__container__list navbar__menu__container__list-sm">
-                    <li class="navbar__menu__container__list__item navbar__menu__container__list__item-sm">
-                        <a class="navbar__menu__container__list__item__link navbar__menu__container__list__item__link-sm" href="">About Me</a>
-                    </li>
-                    <li class="navbar__menu__container__list__item navbar__menu__container__list__item-sm">
-                        <a class="navbar__menu__container__list__item__link navbar__menu__container__list__item__link-sm" href="">Skills</a>
-                    </li>
-                    <li class="navbar__menu__container__list__item navbar__menu__container__list__item-sm">
-                        <a class="navbar__menu__container__list__item__link navbar__menu__container__list__item__link-sm" href="">Projects</a>
-                    </li>
-                    <li class="navbar__menu__container__list__item navbar__menu__container__list__item-sm">
-                        <a class="navbar__menu__container__list__item__link navbar__menu__container__list__item__link-sm" href="">Contact</a>
-                    </li>
-                </ul>
-            </nav> -->
-        <nav class="navbar__menu navbar__menu-lg">
+    <header>
+        <div class="navbar">
+        <div class="navbar__logo">
+            <img src="./assets/Eo_circle_purple_white_letter-s.svg.png" alt="S Logo" class="navbar__logo--img">
+            <span class="navbar__logo--fname">Siyu</span><span class="navbar__logo--lname">Liu</span>
+        </div>
+        <nav class="navbar__menu navbar__menu--sm">
+            <div class="navbar__menu__hb"><i class="fa-solid fa-bars fa-xl" style="color: #9481f4;"></i></div>
+            <!-- <i class="fa-solid fa-bars fa-xl" style="color: #9481f4;"></i> -->
+            <!-- <ul class="navbar__menu__list navbar__menu__list-sm">
+                <li class="navbar__menu__list__item navbar__menu__list__item-sm">
+                    <a class="navbar__menu__list__item__link navbar__menu__list__item__link-sm" href="">About Me</a>
+                </li>
+                <li class="navbar__menu__list__item navbar__menu__list__item-sm">
+                    <a class="navbar__menu__list__item__link navbar__menu__list__item__link-sm" href="">Skills</a>
+                </li>
+                <li class="navbar__menu__list__item navbar__menu__list__item-sm">
+                    <a class="navbar__menu__list__item__link navbar__menu__list__item__link-sm" href="">Projects</a>
+                </li>
+                <li class="navbar__menu__list__item navbar__menu__list__item-sm">
+                    <a class="navbar__menu__list__item__link navbar__menu__list__item__link-sm" href="">Contact</a>
+                </li>
+            </ul> -->
+        </nav>
+        <nav class="navbar__menu navbar__menu--lg">
             <ul class="navbar__menu__list navbar__menu__list-lg">
                 <li class="navbar__menu__list__item navbar__menu__list__item-lg">
-                    <a class="navbar__menu__list__item__link navbar__menu__list__item__link-lg" href="">About Me</a>
+                    <a class="navbar__menu__list__item__link navbar__menu__list__item__link-lg" href="#aboutMe">About Me</a>
                 </li>
                 <li class="navbar__menu__list__item navbar__menu__list__item-lg">
-                    <a class="navbar__menu__list__item__link navbar__menu__list__item__link-lg" href="">Skills</a>
+                    <a class="navbar__menu__list__item__link navbar__menu__list__item__link-lg" href="#skills">Skills</a>
                 </li>
                 <li class="navbar__menu__list__item navbar__menu__list__item-lg">
-                    <a class="navbar__menu__list__item__link navbar__menu__list__item__link-lg" href="">Projects</a>
+                    <a class="navbar__menu__list__item__link navbar__menu__list__item__link-lg" href="#projects">Projects</a>
                 </li>
                 <li class="navbar__menu__list__item navbar__menu__list__item-lg">
-                    <a class="navbar__menu__list__item__link navbar__menu__list__item__link-lg" href="">Contact</a>
+                    <a class="navbar__menu__list__item__link navbar__menu__list__item__link-lg" href="#contact">Contact</a>
                 </li>
             </ul>
         </nav>
+    </div>
     </header>
+    
     <main>
-        <section class="section--about-me" >
+        <section class="section--about-me" id="aboutMe" >
             <div class="section__text section--about-me__text">
                 <p class="section__text__title section--about-me__text--title">Junior Software Engineer</p>
                 <h1 class="section__text__title section--about-me__text--name">Siyu Liu</h1>
                 <p class="section__text__content section--about-me__text--content">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni pariatur accusantium obcaecati temporibus eligendi dolore dicta? Deserunt, quia ea. Iusto sunt animi accusantium accusamus eveniet, perspiciatis sit at nemo temporibus.
+                    I am a junior software engineer with experience across a plethora of technologies such as
+HTML, CSS, JavaScript, React, Java, MySQL, MongoDB, NodeJS, Express, AWS. My
+specialty includes quick learning new skills and programming languages, problemsolving,
+and collaborating with team members to produce high quality applications.
+I am a committed and self-motivated individual demonstrated throughout my career to
+date, as well as in my personal achievements. 
+<br/><br/>
+I enjoy reading, normally spend hours on it everyday. And walking in the park is also a part of my daily routine.
                 </p>
-                <button class="btn section__text__btn section--about-me__text__btn">Download CV</button>
+                <button class="btn section__text__btn section--about-me__text__btn"><a class="btn section__text__btn--link section--about-me__text__btn--link" href="./assets/Siyu Liu Resume.pdf" download="Siyu Resume">Download CV</a></button>
                 <!-- <button class="btn section__text__btn section--about-me__text__btn--projects">View Works</button> -->
             </div>
             <div class="section__img section--about-me__img">
-                <img src="./profile-picture.webp" alt="">
+                <img src="./assets/profile-image.jpg" alt="Profile Image">
             </div>
 
         </section>
-        <section class="section section--skills">
+        <section class="section section--skills" id="skills">
             <h2 class="section__title section--skills__title">Skills</h2>
             <div class="section__content section--skills__content">
                 <div class="section__content__item section--skills__content__item">
-                    <img class="section__content__item--img section--skills__content__item--img" src="./images/icons/html-5.png" alt="">
+                    <img class="section__content__item--img section--skills__content__item--img" src="./assets/icons/html-5.png" alt="">
                     <p class="section____content__item--name section--skills__content__item--name">HTML5</p>
                 </div>
                 <div class="section__content__item section--skills__content__item">
-                    <img class="section__content__item--img section--skills__content__item--img" src="./images/icons/css-3.png" alt="">
+                    <img class="section__content__item--img section--skills__content__item--img" src="./assets/icons/css-3.png" alt="">
                     <p class="section____content__item--name section--skills__content__item--name">CSS3</p>
                 </div>
                 <div class="section__content__item section--skills__content__item">
-                    <img class="section__content__item--img section--skills__content__item--img" src="./images/icons/sass.png" alt="">
+                    <img class="section__content__item--img section--skills__content__item--img" src="./assets/icons/sass.png" alt="">
                     <p class="section____content__item--name section--skills__content__item--name">Sass/SCSS</p>
                 </div>
                 <div class="section__content__item section--skills__content__item">
-                    <img class="section__content__item--img section--skills__content__item--img" src="./images/icons/js.png" alt="">
+                    <img class="section__content__item--img section--skills__content__item--img" src="./assets/icons/js.png" alt="">
                     <p class="section____content__item--name section--skills__content__item--name">JavaScript</p>
                 </div>
                 <div class="section__content__item section--skills__content__item">
-                    <img class="section__content__item--img section--skills__content__item--img" src="./images/icons/react.png" alt="">
+                    <img class="section__content__item--img section--skills__content__item--img" src="./assets/icons/react.png" alt="">
                     <p class="section____content__item--name section--skills__content__item--name">React</p>
                 </div>
                 <div class="section__content__item section--skills__content__item">
-                    <img class="section__content__item--img section--skills__content__item--img" src="./images/icons/java.png" alt="">
+                    <img class="section__content__item--img section--skills__content__item--img" src="./assets/icons/java.png" alt="">
                     <p class="section____content__item--name section--skills__content__item--name">Java</p>
                 </div>
                 <div class="section__content__item section--skills__content__item">
-                    <img class="section__content__item--img section--skills__content__item--img" src="./images/icons/springboot.png" alt="">
+                    <img class="section__content__item--img section--skills__content__item--img" src="./assets/icons/springboot.png" alt="">
                     <p class="section____content__item--name section--skills__content__item--name">springboot</p>
                 </div>
                 <div class="section__content__item section--skills__content__item">
-                    <img class="section__content__item--img section--skills__content__item--img" src="./images/icons/typescript.png" alt="">
+                    <img class="section__content__item--img section--skills__content__item--img" src="./assets/icons/typescript.png" alt="">
                     <p class="section____content__item--name section--skills__content__item--name">Typescript</p>
                 </div>
                 <div class="section__content__item section--skills__content__item">
-                    <img class="section__content__item--img section--skills__content__item--img" src="./images/icons/sql-server.png" alt="">
+                    <img class="section__content__item--img section--skills__content__item--img" src="./assets/icons/sql-server.png" alt="">
                     <p class="section____content__item--name section--skills__content__item--name">SQL</p>
                 </div>
                 <div class="section__content__item section--skills__content__item">
-                    <img class="section__content__item--img section--skills__content__item--img" src="./images/icons/firebase.png" alt="">
+                    <img class="section__content__item--img section--skills__content__item--img" src="./assets/icons/firebase.png" alt="">
                     <p class="section____content__item--name section--skills__content__item--name">Firebase</p>
                 </div>
                 <div class="section__content__item section--skills__content__item">
-                    <img class="section__content__item--img section--skills__content__item--img" src="./images/icons/nestjs.png" alt="">
+                    <img class="section__content__item--img section--skills__content__item--img" src="./assets/icons/nestjs.png" alt="">
                     <p class="section____content__item--name section--skills__content__item--name">Nest.Js</p>
                 </div>
                 <div class="section__content__item section--skills__content__item">
-                    <img class="section__content__item--img section--skills__content__item--img" src="./images/icons/next-js.png" alt="">
+                    <img class="section__content__item--img section--skills__content__item--img" src="./assets/icons/next-js.png" alt="">
                     <p class="section____content__item--name section--skills__content__item--name">Next.Js</p>
                 </div>
                 <div class="section__content__item section--skills__content__item">
-                    <img class="section__content__item--img section--skills__content__item--img" src="./images/icons/git.png" alt="">
+                    <img class="section__content__item--img section--skills__content__item--img" src="./assets/icons/git.png" alt="">
                     <p class="section____content__item--name section--skills__content__item--name">Git</p>
                 </div>
             </div>
         </section>
-        <section class="section section--projects">
+        <section class="section section--projects" id="projects">
             <h2 class="section__title section--projects__title">Projects</h2>
             <div class="section__content section--projects__content">
                 <div class="section__content__item section--projects__content__item">
                     <a class="section__content__item__link section--projects__content__item__link" href="">
-                        <img class="section__content__item__link--img section--projects__content__item__link--img" src="./images/projects/movie.webp" alt="">
+                        <img class="section__content__item__link--img section--projects__content__item__link--img" src="./assets/projects/movie.webp" alt="">
                     </a>
                 </div>
                 <div class="section__content__item section--projects__content__item">
                     <a class="section__content__item__link section--projects__content__item__link" href="">
-                        <img class="section__content__item__link--img section--projects__content__item__link--img" src="./images/projects/shopping.webp" alt="">
+                        <img class="section__content__item__link--img section--projects__content__item__link--img" src="./assets/projects/shopping.webp" alt="">
                     </a>
                 </div>
                 <div class="section__content__item section--projects__content__item">
                     <a class="section__content__item__link section--projects__content__item__link" href="">
-                        <img class="section__content__item__link--img section--projects__content__item__link--img" src="./images/projects/weather.webp" alt="">
+                        <img class="section__content__item__link--img section--projects__content__item__link--img" src="./assets/projects/weather.webp" alt="">
                     </a>
                 </div>
                 <div class="section__content__item section--projects__content__item">
                     <a class="section__content__item__link section--projects__content__item__link" href="">
-                        <img class="section__content__item__link--img section--projects__content__item__link--img" src="./images/projects/pet.webp" alt="">
+                        <img class="section__content__item__link--img section--projects__content__item__link--img" src="./assets/projects/pet.webp" alt="">
                     </a>
                 </div>
                 <div class="section__content__item section--projects__content__item">
                     <a class="section__content__item__link section--projects__content__item__link" href="">
-                        <img class="section__content__item__link--img section--projects__content__item__link--img" src="./images/projects/blog.webp" alt="">
+                        <img class="section__content__item__link--img section--projects__content__item__link--img" src="./assets/projects/blog.webp" alt="">
                     </a>
                 </div>
                 <div class="section__content__item section--projects__content__item">
                     <a class="section__content__item__link section--projects__content__item__link" href="">
-                        <img class="section__content__item__link--img section--projects__content__item__link--img" src="./images/projects/note.webp" alt="">
+                        <img class="section__content__item__link--img section--projects__content__item__link--img" src="./assets/projects/note.webp" alt="">
                     </a>
                 </div>
             </div>
         </section>
-        <section class="section section--contact">
+        <section class="section section--contact" id="contact">
             <h2 class="section__title section--contact__title">Contact Me</h2>
             <div class="section__content section--contact__content">
                 <ul class="section__content__item section--contact__content__item--list">
