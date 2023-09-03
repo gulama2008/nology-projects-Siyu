@@ -141,7 +141,7 @@ header{
             }
             &--name{
                 margin-top: 0px;
-                margin-bottom: 0px;
+                margin-bottom: 10px;
                 @include mixins.typography(48px,colors.$header-color,600);
             }
     }
@@ -266,9 +266,16 @@ header{
             &__item{
                 width: 30%;
                 &__link{
+                    opacity: 1;
                     &--img{
                         width: 100%;
+                        
+                        
                     }
+                    :hover{
+                            opacity: 0.2;
+                            transition: 0.3s;
+                        }
                 }
             }
         }
@@ -367,6 +374,6 @@ header{
     background-color: #C0b5f1;
     
     &__content{
-        color: white;
+        @include mixins.typography(14px,white,300);
     }
 }
