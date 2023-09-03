@@ -2,11 +2,15 @@
 @use "./partials/colors.scss";
 
 *{
-    // margin: 0px;
+    margin: 0px;
     // padding: 0px;
     font-family: 'Inter', sans-serif;
     color: colors.$main-color;
     
+}
+
+body{
+    margin-bottom: 0px;
 }
 main{
     background-color: colors.$background-color;
@@ -291,7 +295,7 @@ header{
             padding: 10%;
             @include mixins.flex(row,center);
             flex-wrap: nowrap;
-            background-color: colors.$contact-color;
+            // background-color: colors.$contact-color;
             &__item{
                 width: 50%;
                 &--list{
@@ -357,6 +361,12 @@ header{
     }
 }
 
-// .section__content__item__list-container{
-//     @include mixins.flex(column,flex-start,flex-start);
-// }
+.footer{
+    height: 40px;
+    @include mixins.flex(row,center,center);
+    background-color: #C0b5f1;
+    
+    &__content{
+        color: white;
+    }
+}

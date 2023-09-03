@@ -1,6 +1,11 @@
 * {
+  margin: 0px;
   font-family: "Inter", sans-serif;
   color: #7284A6;
+}
+
+body {
+  margin-bottom: 0px;
 }
 
 main {
@@ -342,7 +347,6 @@ header {
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    background-color: #dcdbed;
   }
   .section--contact__content__item {
     width: 50%;
@@ -436,4 +440,16 @@ header {
     font-weight: 200;
     color: #bdc5d7;
   }
+}
+
+.footer {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #C0b5f1;
+}
+.footer__content {
+  color: white;
 }
