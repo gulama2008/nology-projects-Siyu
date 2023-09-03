@@ -189,10 +189,11 @@ header{
 
 .section{
     @include mixins.lg-screen{
-        margin-top: 50px;
+        margin-top: 70px;
         padding: 0px 15%;
         &__title{
             @include mixins.title-lg;
+            margin-bottom: 10px;
         }
         &__content{
             flex-wrap: wrap;
@@ -266,17 +267,19 @@ header{
             &__item{
                 width: 30%;
                 &__link{
+                    
                     opacity: 1;
                     &--img{
                         width: 100%;
-                        
+                    }
+                    
+                    :hover{
+                        opacity: 0.2;
+                        transition: 0.3s;
                         
                     }
-                    :hover{
-                            opacity: 0.2;
-                            transition: 0.3s;
-                        }
                 }
+                
             }
         }
     }
@@ -376,4 +379,32 @@ header{
     &__content{
         @include mixins.typography(14px,white,300);
     }
+}
+
+.section--projects__content__item__link{
+    display: block;
+    position: relative;
+}
+
+.section--projects__content__item__link--details{
+    display: none;
+    &--title{
+        color: colors.$secondary-color;
+    }
+    &--subtitle{
+        color: colors.$secondary-color;
+    }
+}
+
+.section--projects__content__item__link:hover .section--projects__content__item__link--details{
+    display:block;
+    position:absolute;
+    top: 50px;
+    left:50px;
+    color:colors.$secondary-color;
+    transition: 0.6s;
+}
+
+.section--projects__content__item__link--details:hover ~ .section--projects__content__item__link{
+    opacity: 0.2;
 }
