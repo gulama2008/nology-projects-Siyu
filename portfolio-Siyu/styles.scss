@@ -4,8 +4,12 @@
 *{
     // margin: 0px;
     // padding: 0px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     color: colors.$main-color;
+    
+}
+main{
+    background-color: colors.$background-color;
 }
 
 .loadin {
@@ -23,10 +27,13 @@
 header{
     position: fixed;
     top: 0px;
+    left: 0px;
     z-index: 9999;
     background-color: white;
     width: 100%;
     height: 80px;
+    margin-bottom: 0px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);
 }
 .navbar{
     @include mixins.flex(row,space-between);
@@ -85,35 +92,47 @@ header{
                 padding: 5px;
                 cursor: pointer;
             }
-            &__list{
-                display: none;
-                position: fixed;
-                top: 40px;
-                right: 30px;
-                padding-right: 20px;
-                background-color: colors.$menu-color;
-                @include mixins.list;
-                &__item{
-                    :hover{
-                        color: colors.$main-color;
-                    }
-                    &__link{
-                        text-decoration: none;
-                        color: white;
-                        white-space: nowrap;
-                    }
-                }
-            }
         }
     }
 }
+.navbar__menu__list--sm{
+    @include mixins.sm-md-screen{
+        display: none;
+        margin-top: 0px;
+        padding-bottom: 10px;
+        padding-right: 50px;
+        background-color: white;
+        transition-property: display;
+        transition-duration: 2s;
+        transition-delay: 1s;
+        // @include mixins.list;
+        &__item{
+            text-align: right;
+            list-style: none;
+            // margin-top: 0px;
+            margin-bottom: 20px;
+            :hover{
+                color: colors.$main-color;
+            }
+            &__link{
+                text-decoration: none;
+                color:colors.$secondary-color ;
+                white-space: nowrap;
+            }
+        }
+    }
+    @include mixins.lg-screen{
+        display: none;
+    }            
+}
+
 
 .section--about-me{
     background-color: colors.$background-color;
     margin-top: 80px;
     &__text{
             &--title{
-                margin-bottom: 0px;
+                margin-bottom: 10px;
                 @include mixins.typography(14px,colors.$secondary-color,300);
             }
             &--name{
@@ -140,11 +159,10 @@ header{
         background-color: colors.$background-color;
         &__text{
             width: 50%;
-            height: 70%;
             padding: 5%;
             &--content{
-                @include mixins.typography(14px,colors.$main-color,400);
-                line-height: 1.75em;
+                @include mixins.typography(15px,colors.$main-color,200);
+                line-height: 1.75;
             }
         }
     }
@@ -155,7 +173,8 @@ header{
         padding:5%;
         &__text{
             &--content{
-                @include mixins.typography(12px,colors.$main-color,400);
+                @include mixins.typography(14px,colors.$main-color,300);
+                line-height: 2;
             }
         }
         
@@ -272,14 +291,22 @@ header{
             padding: 10%;
             @include mixins.flex(row,center);
             flex-wrap: nowrap;
-            background-color: colors.$background-color;
+            background-color: colors.$contact-color;
             &__item{
+                width: 50%;
                 &--list{
-                    width: 45%;
+                    width: 100%;
+                    padding-left: 0px;
                     @include mixins.list;
+                    
+                    &--subtitle{
+                        @include mixins.typography(1.125,colors.$main-color,200);
+                        line-height: 2;
+                        margin-top: 0px;
+                    }
                 }
                 &--form{
-                    width: 48%;
+                    width: 100%;
                     @include mixins.flex(column,flex-start,flex-start);
                     gap: 20px;
                     input{
@@ -297,16 +324,20 @@ header{
     }
 
     @include mixins.sm-md-screen{
-        padding: 0px;
-        padding-bottom: 5%;
+        padding: 5%;
+        // padding-bottom: 5%;
         background-color: colors.$background-color;
         &__content{
-            
-            width: 100%;
             &__item{
+                width: 95%;
                 &--list{
                     padding: 0px;
                     @include mixins.list;
+                    &--subtitle{
+                        @include mixins.typography(1.125,colors.$main-color,200);
+                        line-height: 2;
+                        margin-top: 0px;
+                    }
                 }
                 &--form{
                     @include mixins.flex(column,flex-start,flex-start);
@@ -325,3 +356,7 @@ header{
         }
     }
 }
+
+// .section__content__item__list-container{
+//     @include mixins.flex(column,flex-start,flex-start);
+// }
