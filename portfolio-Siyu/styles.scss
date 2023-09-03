@@ -83,28 +83,29 @@ header{
                 border: 1px solid colors.$secondary-color;
                 border-radius: 5px;
                 padding: 5px;
+                cursor: pointer;
             }
             &__list{
-                @include mixins.flex(row,space-between);
-                margin: 0px;
-                padding-left: 0px;
-                gap: 30px;
-                list-style: none;
+                display: none;
+                position: fixed;
+                top: 40px;
+                right: 30px;
+                padding-right: 20px;
+                background-color: colors.$menu-color;
+                @include mixins.list;
                 &__item{
                     :hover{
                         color: colors.$main-color;
                     }
                     &__link{
                         text-decoration: none;
+                        color: white;
                         white-space: nowrap;
-                        color: colors.$secondary-color;
                     }
                 }
             }
         }
     }
-    
-    
 }
 
 .section--about-me{

@@ -85,24 +85,30 @@ header {
     border: 1px solid #8b77ed;
     border-radius: 5px;
     padding: 5px;
+    cursor: pointer;
   }
   .navbar__menu__list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0px;
-    padding-left: 0px;
-    gap: 30px;
+    display: none;
+    position: fixed;
+    top: 40px;
+    right: 30px;
+    padding-right: 20px;
+    background-color: #a7b0c9;
     list-style: none;
+  }
+  .navbar__menu__list li {
+    margin: 25px;
+  }
+  .navbar__menu__list li a {
+    text-decoration: none;
   }
   .navbar__menu__list__item :hover {
     color: #7284A6;
   }
   .navbar__menu__list__item__link {
     text-decoration: none;
+    color: white;
     white-space: nowrap;
-    color: #8b77ed;
   }
 }
 
@@ -328,7 +334,7 @@ header {
     list-style: none;
   }
   .section--contact__content__item--list li {
-    margin-bottom: 30px;
+    margin: 25px;
   }
   .section--contact__content__item--list li a {
     text-decoration: none;
@@ -371,7 +377,7 @@ header {
     list-style: none;
   }
   .section--contact__content__item--list li {
-    margin-bottom: 30px;
+    margin: 25px;
   }
   .section--contact__content__item--list li a {
     text-decoration: none;
